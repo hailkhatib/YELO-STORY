@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#00434e",
+                    "on-surface-variant": "#3d494c",
+                    "primary-fixed-dim": "#60d6ee",
+                    "primary": "#006877",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#f8f9ff",
+                    "surface-container-low": "#eff4ff",
+                    "tertiary-container": "#a0a9aa",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#001f25",
+                    "error": "#ba1a1a",
+                    "outline-variant": "#bcc9cc",
+                    "on-secondary-container": "#5e6473",
+                    "surface": "#f8f9ff",
+                    "on-tertiary-fixed": "#151d1e",
+                    "on-tertiary-container": "#353e3f",
+                    "primary-container": "#38b6cd",
+                    "on-secondary-fixed": "#161c27",
+                    "surface-container-high": "#dce9ff",
+                    "on-error": "#ffffff",
+                    "secondary": "#585e6c",
+                    "on-tertiary-fixed-variant": "#404849",
+                    "surface-container": "#e5eeff",
+                    "surface-tint": "#006877",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#dde2f3",
+                    "outline": "#6d797c",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#dde2f3",
+                    "on-secondary-fixed-variant": "#414754",
+                    "on-background": "#0b1c30",
+                    "surface-dim": "#cbdbf5",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#60d6ee",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#d3e4fe",
+                    "primary-fixed": "#a5eeff",
+                    "inverse-surface": "#213145",
+                    "on-surface": "#0b1c30",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-primary-fixed-variant": "#004e5a",
+                    "tertiary-fixed": "#dbe4e5",
+                    "tertiary-fixed-dim": "#bfc8c9",
+                    "secondary-fixed-dim": "#c1c6d7",
+                    "tertiary": "#576061",
+                    "background": "#f8f9ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "40px",
+                    "margin-mobile": "16px",
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "label-sm": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "label-md": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "body-md": ["Montserrat"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Montserrat', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .magic-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(0, 104, 119, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-4 h-16 z-50 bg-surface dark:bg-inverse-surface shadow-sm sticky top-0">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" style="font-size: 28px;">auto_stories</span>
+<h1 class="font-headline-md-mobile text-headline-md-mobile font-bold text-primary dark:text-primary-fixed-dim">Yelo Story</h1>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant/30">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a creative professional in a modern studio setting. The person has a friendly, welcoming expression, and the background is softly blurred with hints of high-end design tools and warm ambient lighting. The overall color palette is clean, featuring soft whites and subtle cyan accents to match the brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsu-L_fWAlR5Kl5P0eOunRO8pK1G5Bf1YuQwmAwjWcLdeJUJJXYAwDm5-7oyo_MDYkKahtODSPB9aImlc73I9WiUf1T8QUhwcREaBd9q5GyY6aLTBaDWp5TiFwtUnTGSZZxq1yc5_irCFXkr8ItttVZWzoTfSHIQmb5oBSC5_-Q8wBhduCUMFoMTPu28JrfqZI4Lxklq3x_S_i1DHB2aQpCEI5ckkz1I8i-ondoHv4MBE2xxpa57zYsc1Cm9ocDrPRkji-UshbroL0"/>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-4 py-8 magic-pattern">
+<!-- Header Section -->
+<section class="mb-8">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-background mb-2">Ma Bibliothèque</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Retrouve ici toutes les histoires merveilleuses que nous avons créées ensemble.</p>
+</section>
+<!-- Filters Section -->
+<div class="flex gap-3 mb-10 overflow-x-auto pb-2 no-scrollbar">
+<button class="px-6 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-md transition-all">Tous les contes</button>
+<button class="px-6 py-2 rounded-full bg-white border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-all">Animaux</button>
+<button class="px-6 py-2 rounded-full bg-white border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-all">Espace</button>
+</div>
+<!-- Stories Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Story 1 -->
+<div class="group bg-white rounded-xl overflow-hidden shadow-[0_4px_12px_0_rgba(0,0,0,0.04)] border border-outline-variant/20 hover:shadow-[0_8px_24px_0_rgba(0,0,0,0.08)] transition-all duration-300">
+<div class="h-56 relative overflow-hidden">
+<img alt="Le Secret du Dragon Bleu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional 3D-style digital illustration of a majestic blue dragon perched on a misty mountain peak. The dragon's scales have a subtle crystalline shimmer, and its eyes glow with ancient wisdom. The environment is filled with ethereal clouds and soft, magical blue lighting that creates a sense of wonder and epic storytelling. The aesthetic is cinematic and high-end, perfectly fitting a creative studio brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjvx-UK7osjlmRUABNjIaxWp4V0DOQH4k8VQKbnXC4I9_JpoW-A3pg8Qg1Ckh-uTlCI_GouZspaZCHEvXODLNlqIYoQ7ke8c_9HAxLDLMJBAnC9RRHwd4iBvRqc_XqlUqqjR5Q-B92ZoAAEVuDXrhVRWxA2RQ_duR7IQ39_pf_KXXfYVB6yvZTf4uF1zrGZPN6UBo-CvRFOyDrpLNvNgzQZIOIAg4da5d9T-bKEZJiZRZO1xzYCgCMJjXBIN62LZB9L2fLqk-nsIMh"/>
+<div class="absolute top-4 left-4 px-3 py-1 bg-black/40 backdrop-blur-md rounded-full text-white font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 5 min
+                    </div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-on-background mb-4 line-clamp-1">Le Secret du Dragon Bleu</h3>
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-label-sm">Conte de Fées</span>
+<button class="flex items-center gap-2 px-6 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary/90 transition-colors">
+                            Lire <span class="material-symbols-outlined text-[18px]">menu_book</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Story 2 -->
+<div class="group bg-white rounded-xl overflow-hidden shadow-[0_4px_12px_0_rgba(0,0,0,0.04)] border border-outline-variant/20 hover:shadow-[0_8px_24px_0_rgba(0,0,0,0.08)] transition-all duration-300">
+<div class="h-56 relative overflow-hidden">
+<img alt="La Forêt de Bonbons" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant and high-quality digital illustration of an enchanted forest where the trees are giant lollipops and the ground is covered in sugary marshmallows. The lighting is warm and golden, casting soft shadows across the colorful candy landscape. The style is playful yet refined, with intricate textures that make the candy look delicious and magical. The color palette is a rich explosion of pinks, yellows, and the brand's signature cyan." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYtv9wF2QRoeLVhexHz6KXPrP4_ol_w9siZTs9mYoq15s9yHmR3qw7FSE4V6O4F1tET89bqTXOfhE31ovXQTCFpIxfDxhFsVxpoB8_xuqPW9AHOHKMUXYnPNIm4M0XrV_PFnkyB0BfK1MPUhpavvn4q74aVLWuDcBKRuOGTEfrAjddUENwRS6NKVhy0PmTePchVMy8mta-5aMilqTki2UVkNk09w6z9T_PnsbnYH8ZTt_uAdL9As7atoSq-yp3gzrlC8oPTV_Mv3VR"/>
+<div class="absolute top-4 left-4 px-3 py-1 bg-black/40 backdrop-blur-md rounded-full text-white font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 8 min
+                    </div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-on-background mb-4 line-clamp-1">La Forêt de Bonbons</h3>
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-label-sm">Aventure</span>
+<button class="flex items-center gap-2 px-6 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary/90 transition-colors">
+                            Lire <span class="material-symbols-outlined text-[18px]">menu_book</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Story 3 -->
+<div class="group bg-white rounded-xl overflow-hidden shadow-[0_4px_12px_0_rgba(0,0,0,0.04)] border border-outline-variant/20 hover:shadow-[0_8px_24px_0_rgba(0,0,0,0.08)] transition-all duration-300">
+<div class="h-56 relative overflow-hidden">
+<img alt="L'Ami venu de l'Espace" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A charming digital illustration of a cute, friendly alien with large expressive eyes and a glowing suit, standing next to a small, sleek spaceship on a bioluminescent purple planet. The background features a vast starry nebula with vibrant swirls of cosmic energy in shades of blue and violet. The scene is illuminated by soft, otherworldly glows, creating a heartwarming and imaginative atmosphere for a child's story." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaGv7crGRcWkaXGkKHja4w7_Zumu_8B5t5PEZ70evTeD27MG7CsWZ_eMv7puymRzZyTT57G4sEdHPJ01C_Em3VxsI3Nva-HABe8HEW5YyXP84ikYZYS5wI_ifoB0G4-le48jcBYloLOaJdHTDHUtz55jroNHJ5mUMlZzax_6DdQkMJsf1-LySG5RGEk7eyRh9ftkG7etEH4Y3Vyw28yjtPpEq4xQfhszH5f1t5Nlz6T0dTtEDR1FEE-BcADokTHVhUo34onHV9sNg7"/>
+<div class="absolute top-4 left-4 px-3 py-1 bg-black/40 backdrop-blur-md rounded-full text-white font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 6 min
+                    </div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-on-background mb-4 line-clamp-1">L'Ami venu de l'Espace</h3>
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-label-sm">Espace</span>
+<button class="flex items-center gap-2 px-6 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary/90 transition-colors">
+                            Lire <span class="material-symbols-outlined text-[18px]">menu_book</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA Section -->
+<section class="mt-16 bg-surface-container-low rounded-3xl p-8 md:p-12 border border-primary-container/20 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined" style="font-size: 160px;">auto_stories</span>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="text-center md:text-left">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Envie d'une nouvelle aventure ?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">Laisse libre cours à ton imagination et crée une histoire unique en quelques secondes.</p>
+</div>
+<button class="whitespace-nowrap px-8 py-4 rounded-xl bg-primary text-on-primary font-label-md text-label-md shadow-lg shadow-primary/20 flex items-center gap-3 hover:scale-105 transition-transform active:scale-95">
+<span class="material-symbols-outlined">add_circle</span> Créer une nouvelle histoire
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface dark:bg-inverse-surface border-t border-outline-variant/30 shadow-[0_-4px_12px_0_rgba(0,0,0,0.04)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed-dim rounded-xl px-4 py-1 transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-sm text-label-sm mt-1">Bibliothèque</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-on-surface-variant/20 transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-label-sm text-label-sm mt-1">Créer</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-on-surface-variant/20 transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined">mic</span>
+<span class="font-label-sm text-label-sm mt-1">Ma Voix</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-on-surface-variant/20 transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-sm text-label-sm mt-1">Paramètres</span>
+</a>
+</nav>
+</body></html>

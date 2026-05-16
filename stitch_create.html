@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Détails &amp; Voix - Lumina Stories</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e4e2e3",
+                    "background": "#fbf9fa",
+                    "tertiary": "#211200",
+                    "on-primary-fixed": "#0b1d2d",
+                    "on-tertiary-container": "#a88c69",
+                    "surface-container-highest": "#e4e2e3",
+                    "secondary-container": "#cde6f4",
+                    "inverse-primary": "#b7c8de",
+                    "primary-container": "#1a2b3c",
+                    "primary-fixed": "#d2e4fb",
+                    "inverse-surface": "#303032",
+                    "surface": "#fbf9fa",
+                    "on-background": "#1b1c1d",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#e1c29b",
+                    "on-secondary-fixed": "#051e28",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#e9e7e9",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#b1cad7",
+                    "surface-container-low": "#f5f3f4",
+                    "on-tertiary-fixed-variant": "#584326",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed": "#281802",
+                    "on-primary-fixed-variant": "#38485a",
+                    "tertiary-fixed": "#feddb5",
+                    "on-secondary-container": "#506873",
+                    "tertiary-container": "#38260b",
+                    "secondary": "#4a626d",
+                    "on-tertiary": "#ffffff",
+                    "surface-bright": "#fbf9fa",
+                    "surface-tint": "#4f6073",
+                    "on-secondary-fixed-variant": "#334a55",
+                    "primary-fixed-dim": "#b7c8de",
+                    "primary": "#041627",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#dbd9db",
+                    "on-surface-variant": "#44474c",
+                    "outline": "#74777d",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#cde6f4",
+                    "on-surface": "#1b1c1d",
+                    "surface-container": "#efedef",
+                    "on-primary-container": "#8192a7",
+                    "inverse-on-surface": "#f2f0f2",
+                    "outline-variant": "#c4c6cd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "xl": "64px",
+                    "margin-mobile": "20px",
+                    "lg": "40px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Playfair Display"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Playfair Display"],
+                    "label-lg": ["Inter"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fbf9fa;
+            color: #1b1c1d;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .voice-card-selected {
+            border-color: #041627;
+            background-color: #f5f3f4;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col font-body-md">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-base">
+<div class="flex items-center gap-sm">
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed hover:bg-surface-container-high transition-colors duration-200 p-xs rounded-full">menu</button>
+<span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed tracking-tight">Lumina Stories</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-secondary-container overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional and clean studio headshot of a friendly user avatar. The image is rendered in a soft, minimalist digital illustration style with a warm, neutral background. The lighting is gentle and high-key, maintaining a premium and calm atmosphere consistent with a high-end educational storytelling application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA21q-0lMxe9TOsOoPu8MF6pRtBwpj7oSIYdUgJPJRYrypfmcZk2P10flxLHj8qjCkKt5nP0jEwi0rR4qP8AMmzdauQF2fxujgNGHkLghJHmaZkYRwz0bnUDe1twticgwyodtzy0h1_ISjZ2W-V5IdmUNjxT4VFPiL3fRcOrBh-Swx5KOKbxrwdkXDaBIVVlLJhnANQqu5ewgz_m7Q82g8a57kiSYzjytSj3UeH9ph50FZLfS70gmY265Di4c59Qaqd5B_tDliZ15FM"/>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center w-full px-margin-mobile md:px-margin-desktop py-lg max-w-[1200px] mx-auto">
+<!-- Hero Section / Title -->
+<div class="w-full max-w-[720px] mb-xl text-center md:text-left">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-xs">Détails &amp; Voix</h1>
+<p class="font-body-lg text-body-lg text-secondary">Personnalisons ton histoire pour la rendre unique !</p>
+</div>
+<div class="w-full max-w-[720px] space-y-lg">
+<!-- Form Section -->
+<section class="space-y-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Titre de l'histoire (optionnel)</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md placeholder:text-outline-variant" placeholder="Ex: Le Voyage de l'Espace" type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Nom du héros (optionnel)</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md placeholder:text-outline-variant" placeholder="Ex: Petit Ours" type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Mots magiques (clés)</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md placeholder:text-outline-variant" placeholder="Ex: Forêt, Amitié, Courage..." type="text"/>
+</div>
+</section>
+<!-- Voice Selection -->
+<section class="pt-base">
+<h2 class="font-label-lg text-label-lg text-primary mb-md">Qui raconte l'histoire ?</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Voice Card 1 (Active) -->
+<button class="voice-card-selected flex flex-col items-center p-md border-2 rounded-xl text-center group relative transition-all duration-200">
+<div class="absolute top-2 right-2 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center mb-sm">
+<span class="material-symbols-outlined text-primary text-[32px]">mic</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-primary">Adam</h3>
+<p class="font-label-sm text-label-sm text-secondary">Calme &amp; Posé</p>
+</button>
+<!-- Voice Card 2 -->
+<button class="bg-surface-container-lowest flex flex-col items-center p-md border border-outline-variant rounded-xl text-center group hover:border-primary transition-all duration-200">
+<div class="w-16 h-16 bg-surface-container-high rounded-full flex items-center justify-center mb-sm group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-[32px] group-hover:text-primary">mic</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-primary">Callum</h3>
+<p class="font-label-sm text-label-sm text-secondary">Enthousiaste &amp; Énergique</p>
+</button>
+<!-- Voice Card 3 -->
+<button class="bg-surface-container-lowest flex flex-col items-center p-md border border-outline-variant rounded-xl text-center group hover:border-primary transition-all duration-200">
+<div class="w-16 h-16 bg-surface-container-high rounded-full flex items-center justify-center mb-sm group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-[32px] group-hover:text-primary">mic</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-primary">Charlie</h3>
+<p class="font-label-sm text-label-sm text-secondary">Doux &amp; Berçant</p>
+</button>
+</div>
+</section>
+<!-- CTA Section -->
+<div class="pt-lg pb-xl">
+<button class="w-full bg-primary text-white py-md rounded-lg font-label-lg text-label-lg hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-sm">
+                    Générer le synopsis
+                    <span class="material-symbols-outlined">auto_awesome</span>
+</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center pt-xs pb-safe px-sm bg-surface dark:bg-surface-dim shadow-[0px_-4px_20px_rgba(26,43,60,0.05)] z-50 md:hidden">
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-sm text-label-sm">Library</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed font-bold">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="font-label-sm text-label-sm">Create</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">mic</span>
+<span class="font-label-sm text-label-sm">My Voice</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-sm text-label-sm">Settings</span>
+</button>
+</nav>
+<!-- Desktop Sidebar Suggestion (Optional but fits the hierarchy) -->
+<div class="hidden md:flex fixed left-0 top-[60px] h-full w-[240px] bg-surface-container-low border-r border-outline-variant flex-col py-lg px-md gap-md">
+<a class="flex items-center gap-sm p-sm rounded-lg text-secondary hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-lg">Library</span>
+</a>
+<a class="flex items-center gap-sm p-sm rounded-lg bg-secondary-container text-primary font-bold" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="font-label-lg">Create</span>
+</a>
+<a class="flex items-center gap-sm p-sm rounded-lg text-secondary hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">mic</span>
+<span class="font-label-lg">My Voice</span>
+</a>
+<a class="flex items-center gap-sm p-sm rounded-lg text-secondary hover:bg-surface-container-high transition-colors mt-auto mb-xl" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-lg">Settings</span>
+</a>
+</div>
+</body></html>

@@ -1,98 +1,151 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image } from 'react-native';
+import { useRouter } from 'expo-router';
+import { useEffect, useState } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { MaterialIcons } from '@expo/vector-icons';
+import { useIsFocused } from '@react-navigation/native';
+import { AppContext } from '../../src/context/AppContext';
+import { useContext } from 'react';
 
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
+const TRANSLATIONS = {
+  'Français': {
+    empty: "Aucune histoire pour le moment.",
+    emptySub: "Allez dans l'onglet Créer pour inventer votre première histoire !",
+    newStory: "Nouvelle histoire",
+    read: "Lire"
+  },
+  'Anglais': {
+    empty: "No stories yet.",
+    emptySub: "Go to the Create tab to invent your first story!",
+    newStory: "New story",
+    read: "Read"
+  },
+  'Espagnol': {
+    empty: "No hay historias todavía.",
+    emptySub: "¡Ve a la pestaña Crear para inventar tu primera historia!",
+    newStory: "Nueva historia",
+    read: "Leer"
+  }
+};
 
-export default function HomeScreen() {
+export default function LibraryScreen() {
+  const router = useRouter();
+  const [stories, setStories] = useState([]);
+  const isFocused = useIsFocused();
+  const { language, isLoaded } = useContext(AppContext);
+
+  const t = (isLoaded && TRANSLATIONS[language]) ? TRANSLATIONS[language] : TRANSLATIONS['Français'];
+
+  useEffect(() => {
+    if (isFocused) {
+      loadStories();
+    }
+  }, [isFocused]);
+
+  const loadStories = async () => {
+    try {
+      const stored = await AsyncStorage.getItem('yelo_stories');
+      if (stored) setStories(JSON.parse(stored));
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
+    <View style={styles.container}>
+      {stories.length === 0 ? (
+        <View style={styles.emptyContainer}>
+          <Text style={styles.emptyText}>{t.empty}</Text>
+          <Text style={styles.emptySub}>{t.emptySub}</Text>
+        </View>
+      ) : (
+        <FlatList
+          data={stories}
+          keyExtractor={item => item.id}
+          renderItem={({item}) => (
+            <View style={styles.card}>
+              <View style={styles.imagePlaceholder}>
+                {item.coverImage ? (
+                  <Image 
+                    source={{uri: item.coverImage}} 
+                    style={{width: '100%', height: '100%', resizeMode: 'cover'}} 
+                  />
+                ) : (
+                  <MaterialIcons name="auto-stories" size={40} color="#38b6cd" />
+                )}
+              </View>
+              <View style={styles.cardContent}>
+                <View style={styles.cardHeader}>
+                  <Text style={styles.cardTitle}>{item.title || (item.summary ? item.summary.substring(0, 50) + '...' : t.newStory)}</Text>
+                  <View style={styles.durationBadge}>
+                    <Text style={styles.durationText}>3 min</Text>
+                  </View>
+                </View>
+                <Text style={styles.cardTags}>{item.genre} • {item.tone} • {item.age}</Text>
+                <TouchableOpacity style={styles.readBtn} onPress={() => router.push(`/story/${item.id}`)}>
+                  <Text style={styles.readBtnText}>{t.read}</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          )}
         />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
-
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+      )}
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
+  container: { flex: 1, backgroundColor: '#f8f9ff', padding: 20 },
+  emptyContainer: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  emptyText: { color: '#0b1c30', fontSize: 18, fontFamily: 'Montserrat_700Bold' },
+  emptySub: { color: '#6d797c', textAlign: 'center', marginTop: 10, fontFamily: 'Montserrat_500Medium' },
+  card: { 
+    backgroundColor: '#ffffff', 
+    borderRadius: 16, 
+    flexDirection: 'column', 
+    marginBottom: 20, 
+    borderWidth: 1, 
+    borderColor: '#bcc9cc',
+    shadowColor: '#38b6cd',
+    shadowOpacity: 0.05,
+    shadowRadius: 10,
+    elevation: 2,
+    overflow: 'hidden'
+  },
+  imagePlaceholder: {
+    height: 120,
+    backgroundColor: '#eaf1ff',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  cardContent: {
+    padding: 15
+  },
+  cardHeader: {
     flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginBottom: 10
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  cardTitle: { color: '#0b1c30', fontSize: 16, fontFamily: 'Montserrat_700Bold', lineHeight: 22, flex: 1, marginRight: 10 },
+  durationBadge: {
+    backgroundColor: '#eaf1ff',
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 4
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  durationText: { color: '#6d797c', fontSize: 12, fontFamily: 'Montserrat_600SemiBold' },
+  cardTags: { color: '#38b6cd', fontSize: 12, fontFamily: 'Montserrat_700Bold', marginBottom: 15 },
+  readBtn: {
+    backgroundColor: '#38b6cd',
+    paddingVertical: 8,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+    alignSelf: 'flex-end'
   },
+  readBtnText: {
+    color: '#ffffff',
+    fontFamily: 'Montserrat_700Bold',
+    fontSize: 14
+  }
 });

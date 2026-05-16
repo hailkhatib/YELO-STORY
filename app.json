@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "yelo-story",
+    "name": "Yelo Story",
     "slug": "yelo-story",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,9 +9,11 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yelo.story"
     },
     "android": {
+      "package": "com.yelo.story",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -43,6 +45,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "6713384d-812d-4806-ac91-4206cc37700d"
+      }
     }
   }
 }

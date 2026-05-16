@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#00434e",
+                    "on-surface-variant": "#3d494c",
+                    "primary-fixed-dim": "#60d6ee",
+                    "primary": "#006877",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#f8f9ff",
+                    "surface-container-low": "#eff4ff",
+                    "tertiary-container": "#a0a9aa",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#001f25",
+                    "error": "#ba1a1a",
+                    "outline-variant": "#bcc9cc",
+                    "on-secondary-container": "#5e6473",
+                    "surface": "#f8f9ff",
+                    "on-tertiary-fixed": "#151d1e",
+                    "on-tertiary-container": "#353e3f",
+                    "primary-container": "#38b6cd",
+                    "on-secondary-fixed": "#161c27",
+                    "surface-container-high": "#dce9ff",
+                    "on-error": "#ffffff",
+                    "secondary": "#585e6c",
+                    "on-tertiary-fixed-variant": "#404849",
+                    "surface-container": "#e5eeff",
+                    "surface-tint": "#006877",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#dde2f3",
+                    "outline": "#6d797c",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#dde2f3",
+                    "on-secondary-fixed-variant": "#414754",
+                    "on-background": "#0b1c30",
+                    "surface-dim": "#cbdbf5",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#60d6ee",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#d3e4fe",
+                    "primary-fixed": "#a5eeff",
+                    "inverse-surface": "#213145",
+                    "on-surface": "#0b1c30",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-primary-fixed-variant": "#004e5a",
+                    "tertiary-fixed": "#dbe4e5",
+                    "tertiary-fixed-dim": "#bfc8c9",
+                    "secondary-fixed-dim": "#c1c6d7",
+                    "tertiary": "#576061",
+                    "background": "#f8f9ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "label-sm": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "label-md": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "body-md": ["Montserrat"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .magic-pattern {
+            background-image: radial-gradient(circle at 2px 2px, #bcc9cc 1px, transparent 0);
+            background-size: 24px 24px;
+            opacity: 0.1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface min-h-screen pb-24">
+<!-- Top Navigation -->
+<header class="bg-surface dark:bg-inverse-surface shadow-sm flex justify-between items-center w-full px-4 h-16 z-50 sticky top-0">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" data-icon="arrow_back">arrow_back</span>
+<h1 class="font-headline-md-mobile text-headline-md-mobile font-bold text-primary dark:text-primary-fixed-dim">Détails &amp; Voix</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high border-2 border-primary-container">
+<img alt="Avatar" data-alt="A professional studio headshot of a creative professional with soft, warm lighting. The background is a minimalist, light blue gradient consistent with a modern creative studio aesthetic. The lighting is crisp, highlighting refined features with a professional yet artistic mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN16xz47OOXkpVXWl-v88BAZtEPMWwIR9slQri1_VIRLTmsMMXRW2yrXl8dpqPIwEWudJpD-gjKJkHGktTYlBMaETmFVem0-UBRD6YuPv5hdefJnpP_MFC19t9eW2D0KC17AB1ZmdwlMVn8IBXhMcCiVANM6x9goSw9e-3D4unMTtp-uYfIMJgyVCzCzHe3Pnuhpqr6EyZ_nTN50Ydkb_7o-ASyX2Mxj8TXHHuGeGzHWLpADvZsfSOk9MbHgKuC_ZfEyVgrzWZ7WUT"/>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-4 md:px-margin-desktop py-8">
+<!-- Introduction -->
+<section class="mb-10 text-center md:text-left">
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Personnalisons ton histoire pour la rendre unique !
+            </p>
+</section>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Form Section -->
+<div class="md:col-span-7 space-y-8">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/30 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-8xl" data-icon="auto_stories">auto_stories</span>
+</div>
+<div class="space-y-6 relative z-10">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Titre de l'histoire (optionnel)</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-2 focus:ring-primary-container outline-none transition-all font-body-md text-body-md" placeholder="Ex: Le Secret de la Forêt Bleue" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Nom du héros (optionnel)</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-2 focus:ring-primary-container outline-none transition-all font-body-md text-body-md" placeholder="Comment s'appelle le personnage principal ?" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Mots magiques (clés)</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-2 focus:ring-primary-container outline-none transition-all font-body-md text-body-md" placeholder="Séparez vos mots par des virgules (ex: dragon, amitié, espace...)" rows="3"></textarea>
+<p class="mt-2 text-label-sm font-label-sm text-outline">Ces mots seront au cœur de l'intrigue de votre histoire.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Voice Selection Section -->
+<div class="md:col-span-5 space-y-6">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface">Qui raconte l'histoire ?</h2>
+<span class="material-symbols-outlined text-primary" data-icon="spatial_audio">spatial_audio</span>
+</div>
+<div class="space-y-4">
+<!-- Profile Card: Adam (Selected) -->
+<div class="group relative bg-primary-container/10 border-2 border-primary rounded-xl p-4 flex items-center gap-4 transition-all duration-300 shadow-sm cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img alt="Adam" data-alt="A cinematic portrait of a male voice actor named Adam. He has a warm, inviting expression. The style is hyper-realistic with soft studio lighting that creates a high-end commercial aesthetic. The background is a blurred sound studio with soft blue ambient lights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1McuUM9ZJbhQmmVjaIaaiAIRwjngOTW1wSDToD9divzI3PaFnVZj0ZQfSdwHAI8GtfQfGOu8_0w3UCbpS-3pcTqQ_YALR_bLVeUSzppjeZbj_W-3qxfxvKfSg0JpWBhEzQjwL2xKCsyF-sm3PbX1sh2M78ODPm65Uhc2Wdj-VyJrV6gq9qq2wEszVjirXogHP358SY1XOptrxX6o3VinKBAohq4t8STA_jY1vm1nxUwUKDNOKsA7sXlP99PH39fNi7Q-k35OKiKAl"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center">
+<h3 class="font-label-md text-label-md text-on-primary-container">Adam</h3>
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="text-label-sm font-label-sm text-on-primary-container/80">Voix chaleureuse &amp; rassurante</p>
+</div>
+<div class="absolute -right-1 -top-1 opacity-20">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="auto_awesome">auto_awesome</span>
+</div>
+</div>
+<!-- Profile Card: Callum -->
+<div class="group bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-4 flex items-center gap-4 hover:bg-surface-container-high transition-all duration-300 cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
+<img alt="Callum" data-alt="A portrait of a male voice actor named Callum. He has a playful and energetic look. The photography style is modern studio portraiture with vibrant cyan and light grey tones. The lighting is bright and even, evoking a creative and dynamic atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDihgVY65falX4oH44FoomzvTiOOOFqKidPAKnQcunIfv9ABepjdnb1QjfSw2QPZU0Rm_o5bAo60vpy5ymHZnQJWVtpFXxUyqTnYL0tU-MfDYcuZL7cQk8QFV-y6hwTEcCjalNmRkxKrXEss4k0C4y7HJlVGV5IV3RhhpPP4zoqZALBMj24zQFEGz9VmliZcqCM-dBif8mSKXa4cuegV5XYQpazc7eQV1wnDZdNKZpwVM4eGrzLajLRYwFJ-IQdRhr29Nsmeqbe-BGO"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center">
+<h3 class="font-label-md text-label-md text-on-surface">Callum</h3>
+<span class="material-symbols-outlined text-outline" data-icon="play_circle">play_circle</span>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Dynamique &amp; Aventureux</p>
+</div>
+</div>
+<!-- Profile Card: Charlie -->
+<div class="group bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-4 flex items-center gap-4 hover:bg-surface-container-high transition-all duration-300 cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-tertiary-container flex items-center justify-center overflow-hidden">
+<img alt="Charlie" data-alt="A professional headshot of a voice actor named Charlie. The character has a mysterious and calm demeanor. The visual style is refined precision with soft ambient shadows and a sophisticated light mode color palette of soft whites and ice blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz0iDLfV6hOdNFDHJuNP2pJ2ayL9WHx89f_q5X3nhy3Bgf6dNiC13asUyCcAK8IIRod3AONwGD1KQrW7Qp6XGHrB9sq6TuK9b-0F4ShFjBCF4cxWTVwWf9DMHV2yvPKZ2jJReUQC_dkIIF2lXxJtXMzvnrbqbTntQTccYN0o2oJGRLEdn58bUVnTy-cbtRbFJl4OzX2fGHXZTa_4K9O2hjosPER-StqLGMM8Fuza1HC7DLq75QV0EtCmsNq0gg5gpOtleM-4SQG7YG"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center">
+<h3 class="font-label-md text-label-md text-on-surface">Charlie</h3>
+<span class="material-symbols-outlined text-outline" data-icon="play_circle">play_circle</span>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Doux &amp; Mystérieux</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Action Area -->
+<div class="fixed bottom-0 left-0 right-0 bg-surface/80 backdrop-blur-md p-4 flex justify-center z-40">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-8 py-4 rounded-full flex items-center gap-3 shadow-lg hover:scale-105 active:scale-95 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+            Générer le synopsis
+        </button>
+</div>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface dark:bg-inverse-surface border-t border-outline-variant/30 shadow-[0_-4px_12px_0_rgba(0,0,0,0.04)]">
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-sm text-label-sm">Bibliothèque</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed-dim rounded-xl px-4 py-1 active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="font-label-sm text-label-sm">Créer</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined" data-icon="mic">mic</span>
+<span class="font-label-sm text-label-sm">Ma Voix</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-sm text-label-sm">Paramètres</span>
+</div>
+</nav>
+</body></html>

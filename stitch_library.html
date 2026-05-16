@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e4e2e3",
+                    "background": "#fbf9fa",
+                    "tertiary": "#211200",
+                    "on-primary-fixed": "#0b1d2d",
+                    "on-tertiary-container": "#a88c69",
+                    "surface-container-highest": "#e4e2e3",
+                    "secondary-container": "#cde6f4",
+                    "inverse-primary": "#b7c8de",
+                    "primary-container": "#1a2b3c",
+                    "primary-fixed": "#d2e4fb",
+                    "inverse-surface": "#303032",
+                    "surface": "#fbf9fa",
+                    "on-background": "#1b1c1d",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#e1c29b",
+                    "on-secondary-fixed": "#051e28",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#e9e7e9",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#b1cad7",
+                    "surface-container-low": "#f5f3f4",
+                    "on-tertiary-fixed-variant": "#584326",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed": "#281802",
+                    "on-primary-fixed-variant": "#38485a",
+                    "tertiary-fixed": "#feddb5",
+                    "on-secondary-container": "#506873",
+                    "tertiary-container": "#38260b",
+                    "secondary": "#4a626d",
+                    "on-tertiary": "#ffffff",
+                    "surface-bright": "#fbf9fa",
+                    "surface-tint": "#4f6073",
+                    "on-secondary-fixed-variant": "#334a55",
+                    "primary-fixed-dim": "#b7c8de",
+                    "primary": "#041627",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#dbd9db",
+                    "on-surface-variant": "#44474c",
+                    "outline": "#74777d",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#cde6f4",
+                    "on-surface": "#1b1c1d",
+                    "surface-container": "#efedef",
+                    "on-primary-container": "#8192a7",
+                    "inverse-on-surface": "#f2f0f2",
+                    "outline-variant": "#c4c6cd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "xl": "64px",
+                    "margin-mobile": "20px",
+                    "lg": "40px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Playfair Display"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Playfair Display"],
+                    "label-lg": ["Inter"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .story-card-shadow {
+            box-shadow: 0px 4px 20px rgba(26, 43, 60, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim w-full top-0 sticky border-b border-outline-variant dark:border-outline z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-base">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed cursor-pointer">menu</span>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed tracking-tight">Lumina Stories</h1>
+</div>
+<div class="flex items-center gap-md">
+<nav class="hidden md:flex gap-md">
+<a class="font-label-lg text-label-lg text-primary dark:text-primary-fixed" href="#">Library</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high transition-colors duration-200 px-sm py-xs rounded" href="#">Create</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high transition-colors duration-200 px-sm py-xs rounded" href="#">My Voice</a>
+</nav>
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="User profile avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKwaqknpfxtFEMsWs09aEbhxukChavm3GEpAmgUuKss7n0NmxTbVabUOWNJrU1DU04Wy6JpBzO6EbFqeG0rq2OTtdAx_vLJ3lvTcMDfc1Ko6OerLwrLX8VirIMmWG6RXmdmC4S4ZwMFEkBN7BYvatpqshSfF58r7V9FQXWP0RQ-GaJtfBFgU4BMh397mvEAqnHKYsUjO9Z7CKznP9Fk3hEh2bynm8TOIRNhxZiOAE1j5Kpi_AYQqug17b4IMvkID0-i-KFjM2KdF4e"/>
+</div>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-lg pb-xl">
+<!-- Header Section -->
+<section class="mb-lg">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-xs">Ma Bibliothèque</h2>
+<p class="font-body-lg text-body-lg text-secondary max-w-[720px]">Retrouve ici toutes les histoires merveilleuses que nous avons créées ensemble.</p>
+</section>
+<!-- Categories / Filter Chips -->
+<section class="flex flex-wrap gap-sm mb-lg">
+<button class="px-md py-xs rounded-full bg-primary text-on-primary font-label-lg transition-all active:scale-95">Tous les contes</button>
+<button class="px-md py-xs rounded-full border border-secondary text-secondary font-label-lg hover:bg-surface-container-high transition-all active:scale-95">Animaux</button>
+<button class="px-md py-xs rounded-full border border-secondary text-secondary font-label-lg hover:bg-surface-container-high transition-all active:scale-95">Espace</button>
+</section>
+<!-- Story Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant story-card-shadow group transition-all duration-300 hover:border-primary">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A magical illustration of a shimmering blue dragon hidden within a crystalline cavern, illuminated by ethereal bioluminescent flora. The style is soft, dreamlike, and painterly, using a palette of midnight blues and sapphire tones with warm golden highlights. The atmosphere is nurturing and mysterious, perfectly capturing a premium digital storybook aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1JYhZ4dMjQT3xMZhqFL28yKKeGeicIB5vbF2NXkNi4YRZ9RLolTq_-XX0hKtlSqKtoL0sKtHdEbhpvhe_NJhZgxLDzRXJfs03ptiAlThW8o9Rp-jEMqcjVPlON0fC0NK_kj4QRj7-LS_MtUhrxVYL4_2gc1V4XQpPcfvTz46mDcz5j0jGwbCD3yATOnTOJGtLCV8bCyhGO95LX7q2NB9ZLqFAcTt1deuWJHVsAaU6EClaFBHUCw1ADdTblzbVXPeRmVVlkkbD2DCW"/>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-headline-md text-headline-md text-primary leading-tight">Le Secret du Dragon Bleu</h3>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary-container px-xs py-[2px] rounded">5 min</span>
+</div>
+<div class="mt-md flex justify-end">
+<button class="px-md py-xs bg-primary text-on-primary rounded font-label-lg transition-all active:scale-95 hover:opacity-90">Lire</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant story-card-shadow group transition-all duration-300 hover:border-primary">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="An enchanting, detailed illustration of a whimsical forest where the trees are made of giant lollipops and the ground is covered in sugar-spun grass. Soft pastel colors dominate the scene, with gentle sunlight filtering through candy-cane branches. The mood is calm and wonder-filled, avoiding high-saturation for a more refined and premium storytelling feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6Sisc7sikbtFV6FMowzdHFRrvU8ONFXpiMudyfdPVtdeIFT2lzv7b2f1jUaGqX7GZCRt-sYOj-2vu_oSt0Dkg28c3Zq-YgA-N77M9YTAJ_MwNNvv9OHSrSakH5lKHgTn8fin4WmZ3YLkJ4DMVqW_zkuZsEcGW4Nwh0KnXLNasHQAQV-JmfitSoWwfq0GG_ECjIiGkLSxOAhRzWirPpttswmuBM7DkbOJSwHISixK5kF7PUufb8mAk24Hivx8ixU5wx4lvIsgaWQ28"/>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-headline-md text-headline-md text-primary leading-tight">La Forêt de Bonbons</h3>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary-container px-xs py-[2px] rounded">8 min</span>
+</div>
+<div class="mt-md flex justify-end">
+<button class="px-md py-xs bg-primary text-on-primary rounded font-label-lg transition-all active:scale-95 hover:opacity-90">Lire</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant story-card-shadow group transition-all duration-300 hover:border-primary">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A serene cosmic illustration showing a friendly, small alien character standing on a soft lavender planet, gazing at a distant, glowing earth. The scene is filled with twinkling stars and gentle nebulae in shades of navy and sage green. The lighting is soft and ambient, creating a sophisticated and educational atmosphere for young readers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB944ovpTLpkvBMYA6e6qri3tTL9zR6ReLRtT5Pk_KJgOdi-miGRGeYJt16PNSaGt7bL6A64FfiK62N-TADoc0jO12I5z6s4orSGubLbrrQaZR4JbrpFZCPuUPcevvdy4siL4uvARSWscBLilncvbH3IToxR6F_uK_K424jQdXxyatqbWCvSk6u_tOFDsJFGyheOVL6_H1s-55aOUJKmhCjXtKNU62ptSp6b5mbW1AgbVKrBFSPVFcrvzi4XjjhuVrabec6aOr0LpoE"/>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-headline-md text-headline-md text-primary leading-tight">L'Ami venu de l'Espace</h3>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary-container px-xs py-[2px] rounded">6 min</span>
+</div>
+<div class="mt-md flex justify-end">
+<button class="px-md py-xs bg-primary text-on-primary rounded font-label-lg transition-all active:scale-95 hover:opacity-90">Lire</button>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mt-xl p-lg bg-secondary-container rounded-xl flex flex-col md:flex-row items-center justify-between gap-md border border-outline-variant">
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-xs">Envie d'une nouvelle aventure ?</h4>
+<p class="font-body-md text-body-md text-on-secondary-container">Laissez votre imagination s'envoler et créez un conte unique dès maintenant.</p>
+</div>
+<button class="whitespace-nowrap px-lg py-md bg-primary text-on-primary rounded-lg font-label-lg flex items-center gap-xs transition-all active:scale-95 hover:opacity-90">
+<span class="material-symbols-outlined">add_circle</span>
+                Créer une nouvelle histoire
+            </button>
+</section>
+</main>
+<!-- BottomNavBar (Visible on mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center pt-xs pb-safe px-sm bg-surface dark:bg-surface-dim shadow-[0px_-4px_20px_rgba(26,43,60,0.05)] z-50">
+<div class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed font-bold">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="font-label-sm text-label-sm">Library</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-transform active:scale-90 duration-150">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-label-sm text-label-sm">Create</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-transform active:scale-90 duration-150">
+<span class="material-symbols-outlined">mic</span>
+<span class="font-label-sm text-label-sm">My Voice</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-transform active:scale-90 duration-150">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-sm text-label-sm">Settings</span>
+</div>
+</nav>
+</body></html>
