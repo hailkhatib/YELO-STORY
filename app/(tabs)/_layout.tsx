@@ -3,6 +3,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { useContext } from 'react';
 import { AppContext } from '../../src/context/AppContext';
 import { Image, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const TAB_TITLES = {
   'Français': { lib: 'Bibliothèque', create: 'Créer', voice: 'Ma Voix', settings: 'Paramètres' },
@@ -13,12 +14,21 @@ const TAB_TITLES = {
 export default function TabLayout() {
   const { language, isLoaded } = useContext(AppContext);
   const t = (isLoaded && TAB_TITLES[language]) ? TAB_TITLES[language] : TAB_TITLES['Français'];
+  const insets = useSafeAreaInsets();
+  
+  const bottomPadding = insets.bottom > 0 ? insets.bottom : 5;
+  const barHeight = 55 + bottomPadding;
 
   return (
     <Tabs screenOptions={{
       tabBarActiveTintColor: '#38b6cd', 
       tabBarInactiveTintColor: '#6d797c',
-      tabBarStyle: { backgroundColor: '#ffffff', borderTopColor: '#dbe4e5', paddingBottom: 5, height: 60 },
+      tabBarStyle: { 
+        backgroundColor: '#ffffff', 
+        borderTopColor: '#dbe4e5', 
+        paddingBottom: bottomPadding, 
+        height: barHeight 
+      },
       headerStyle: { backgroundColor: '#f8f9ff', shadowOpacity: 0, elevation: 0, borderBottomWidth: 0 },
       headerTitle: () => (
         <Image source={require('../../assets/logo-yelo-story.png')} style={{height: 35, resizeMode: 'contain', marginLeft: 10}} />

@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { View, StyleSheet, Animated } from 'react-native';
 import { Video, ResizeMode } from 'expo-av';
 import * as SplashScreen from 'expo-splash-screen';
@@ -10,9 +10,24 @@ export default function AnimatedSplash({ children }) {
   const [isVideoFinished, setVideoFinished] = useState(false);
   const fadeAnim = useRef(new Animated.Value(1)).current;
 
+  // Sécurité anti-blocage : on retire le splash screen natif au bout de 2s maximum
+  // même si la vidéo n'arrive pas à se charger correctement.
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      SplashScreen.hideAsync().catch(() => {});
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const onVideoReadyForDisplay = () => {
     // Hide the native splash screen as soon as the video is ready to be shown
     SplashScreen.hideAsync().catch(() => {});
+  };
+
+  const onVideoError = () => {
+    // Si la vidéo bug (format non supporté, etc), on la passe et on affiche l'app direct
+    SplashScreen.hideAsync().catch(() => {});
+    setVideoFinished(true);
   };
 
   const onPlaybackStatusUpdate = (status) => {
@@ -46,6 +61,7 @@ export default function AnimatedSplash({ children }) {
             isMuted={true}
             onReadyForDisplay={onVideoReadyForDisplay}
             onPlaybackStatusUpdate={onPlaybackStatusUpdate}
+            onError={onVideoError}
           />
         </Animated.View>
       )}

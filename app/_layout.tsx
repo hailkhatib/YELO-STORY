@@ -12,14 +12,16 @@ export const unstable_settings = {
 };
 
 export default function RootLayout() {
-  const [fontsLoaded] = useFonts({
+  const [fontsLoaded, fontError] = useFonts({
     Montserrat_400Regular,
     Montserrat_500Medium,
     Montserrat_600SemiBold,
     Montserrat_700Bold,
   });
 
-  if (!fontsLoaded) return null;
+  // Fallback: If fonts fail to load or take too long, we still want to let the app try to start
+  // or at least fail gracefully rather than sticking on the splash screen forever.
+  if (!fontsLoaded && !fontError) return null;
 
   return (
     <AppProvider>
