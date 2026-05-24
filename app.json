@@ -2,7 +2,7 @@
   "expo": {
     "name": "Yelo Story",
     "slug": "yelo-story",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "yelostory",
@@ -17,7 +17,7 @@
     },
     "android": {
       "package": "com.yelo.story",
-      "versionCode": 3,
+      "versionCode": 4,
       "permissions": ["RECORD_AUDIO"],
       "predictiveBackGestureEnabled": false,
       "adaptiveIcon": {
